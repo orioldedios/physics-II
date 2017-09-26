@@ -52,7 +52,7 @@ bool ModulePhysics::Start()
 	b2Body* ground=myworld->CreateBody(&body);
 
 	b2CircleShape circle;
-	circle.m_radius = PIXELS_TO_METERS(300);
+	circle.m_radius = PIXELS_TO_METERS(200);
 	b2FixtureDef fixture;
 	fixture.shape = &circle;
 	ground->CreateFixture(&fixture);
@@ -86,8 +86,7 @@ update_status ModulePhysics::PostUpdate()
 {
 	// TODO 5: On space bar press, create a circle on mouse position
 	// - You need to transform the position / radius
-
-	if (App->input->GetKey(SDL_SCANCODE_SPACE)==KEY_DOWN)
+	if (App->input->GetKey(SDL_SCANCODE_SPACE)==KEY_DOWN )
 	{
 		b2BodyDef body;
 		body.type = b2_dynamicBody;
