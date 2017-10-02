@@ -19,6 +19,19 @@ class b2Body;
 // then write the implementation in the .cpp
 // Then make your circle creation function to return a pointer to that class
 
+class b2BodyPointer {
+
+public:
+	b2Body* body = nullptr;
+
+	///???
+	b2BodyPointer(b2Body body_aux){
+		this->body = &body_aux;
+	}
+
+	b2Vec2 GetPositionBody()const;
+};
+
 
 class ModulePhysics : public Module
 {
@@ -32,8 +45,9 @@ public:
 	bool CleanUp();
 
 	// TODO 4: Move body creation to 3 functions to create circles, rectangles and chains
-
-
+	b2BodyPointer* CreateCircle(int Mouse_x, int Mouse_y, int radius);
+	void CreateRectangle(int Mouse_x, int Mouse_y, int width,int height);
+	void CreateRick(int Mouse_x, int Mouse_y);
 
 private:
 

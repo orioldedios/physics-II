@@ -1,5 +1,5 @@
 // Pivot 0, 0
-int rick_face_by_kushmastafresh-d9mxrw7[76] = {
+int rick_face_by_kushmastafresh-d9mxrw7[80] = {
 	670, 850,
 	663, 816,
 	663, 798,
@@ -37,11 +37,13 @@ int rick_face_by_kushmastafresh-d9mxrw7[76] = {
 	585, 910,
 	625, 865,
 	634, 854,
-	670, 850
+	670, 850,
+	725, 914,
+	665, 878
 };
 
 // Pivot 0.000000, 0.000000
-float rick_face_by_kushmastafresh-d9mxrw7[76] = {
+float rick_face_by_kushmastafresh-d9mxrw7[80] = {
 	0.806258f, 0.883576f,
 	0.797834f, 0.848233f,
 	0.797834f, 0.829522f,
@@ -79,5 +81,7 @@ float rick_face_by_kushmastafresh-d9mxrw7[76] = {
 	0.703971f, 0.945946f,
 	0.752106f, 0.899168f,
 	0.762936f, 0.887734f,
-	0.806258f, 0.883576f
+	0.806258f, 0.883576f,
+	0.872443f, 0.950104f,
+	0.800241f, 0.912682f
 };

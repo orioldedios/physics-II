@@ -41,7 +41,21 @@ bool ModuleSceneIntro::CleanUp()
 update_status ModuleSceneIntro::Update()
 {
 	// TODO 5: Move all creation of bodies on 1,2,3 key press here in the scene
-	
+	if (App->input->GetKey(SDL_SCANCODE_3) == KEY_DOWN)
+	{
+
+		App->physics->CreateRick(App->input->GetMouseX(), App->input->GetMouseY());
+	}
+	if (App->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN)
+	{
+		App->physics->CreateCircle(App->input->GetMouseX(), App->input->GetMouseY(), 50);
+	}
+
+	if (App->input->GetKey(SDL_SCANCODE_2) == KEY_DOWN)
+	{
+		App->physics->CreateRectangle(App->input->GetMouseX(), App->input->GetMouseY(), 25, 50);
+
+	}
 	// TODO 7: Draw all the circles using "circle" texture
 
 	return UPDATE_CONTINUE;
