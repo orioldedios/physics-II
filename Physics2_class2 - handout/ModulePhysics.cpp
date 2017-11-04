@@ -206,7 +206,7 @@ bool ModulePhysics::CleanUp()
 	return true;
 }
 
-b2BodyPointer* ModulePhysics::CreateCircle(int Mouse_x,int Mouse_y,int radius) {
+b2BodyPointer* ModulePhysics::CreateCircle(int Mouse_x, int Mouse_y, int radius) {
 
 
 	b2BodyDef body;
@@ -223,8 +223,10 @@ b2BodyPointer* ModulePhysics::CreateCircle(int Mouse_x,int Mouse_y,int radius) {
 
 	b->CreateFixture(&fixture);
 
-	return 
+	b2BodyPointer bPtr(*b);
 
+
+	return &bPtr;
 }
 
 void ModulePhysics::CreateRectangle(int Mouse_x, int Mouse_y, int width, int height){
@@ -308,7 +310,7 @@ void ModulePhysics::CreateRick(int Mouse_x, int Mouse_y) {
 	b->CreateFixture(&fixture);
 }
 
-b2Vec2 b2BodyPointer::GetPositionBody()const {
+b2Vec2 b2BodyPointer::GetPositionBody(){
 
 	b2Vec2 pos_m = body->GetPosition();
 

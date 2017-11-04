@@ -6,6 +6,8 @@
 #include "ModuleTextures.h"
 #include "ModulePhysics.h"
 
+#include "Box2D\Box2D\Box2D.h"
+
 ModuleSceneIntro::ModuleSceneIntro(Application* app, bool start_enabled) : Module(app, start_enabled)
 {
 	circle = box = rick = NULL;
@@ -48,7 +50,8 @@ update_status ModuleSceneIntro::Update()
 	}
 	if (App->input->GetKey(SDL_SCANCODE_1) == KEY_DOWN)
 	{
-		App->physics->CreateCircle(App->input->GetMouseX(), App->input->GetMouseY(), 50);
+		App->physics->BodyList.add(*App->physics->CreateCircle(App->input->GetMouseX(), App->input->GetMouseY(), 50));
+
 	}
 
 	if (App->input->GetKey(SDL_SCANCODE_2) == KEY_DOWN)
@@ -57,6 +60,15 @@ update_status ModuleSceneIntro::Update()
 
 	}
 	// TODO 7: Draw all the circles using "circle" texture
+
+
+	for (p2List_item<b2BodyPointer>* body_iterator=App->physics->BodyList.getFirst();body_iterator!=nullptr;body_iterator=body_iterator->next)
+	{
+		App->renderer->Blit(circle,body_iterator->data.GetPositionBody().x, body_iterator->data.GetPositionBody().y);
+
+		
+	}
+
 
 	return UPDATE_CONTINUE;
 }
